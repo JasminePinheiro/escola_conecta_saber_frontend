@@ -56,10 +56,21 @@ export const StatsBar = styled.div`
 export const StatItem = styled.div`
   text-align: center;
   color: ${colors.white};
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   
   @media (max-width: 768px) {
     flex: 1 1 50%;
     min-width: 150px;
+    text-align: center;
+    align-items: center;
+  }
+  
+  @media (max-width: 480px) {
+    text-align: center;
+    align-items: center;
   }
 `
 

@@ -125,10 +125,14 @@ export const StatItem = styled.div`
   @media (max-width: 768px) {
     flex: 1;
     min-width: calc(50% - 10px);
+    align-items: center;
+    text-align: center;
   }
   
   @media (max-width: 480px) {
     min-width: 100%;
+    align-items: center;
+    text-align: center;
   }
 `
 
@@ -136,13 +140,16 @@ export const StatNumber = styled.div`
   font-size: 42px;
   font-weight: 700;
   margin-bottom: 8px;
+  text-align: center;
   
   @media (max-width: 768px) {
     font-size: 32px;
+    text-align: center;
   }
   
   @media (max-width: 480px) {
     font-size: 28px;
+    text-align: center;
   }
 `
 
@@ -150,6 +157,15 @@ export const StatLabel = styled.div`
   font-size: 14px;
   color: ${colors.textDark};
   font-weight: 500;
+  text-align: center;
+  
+  @media (max-width: 768px) {
+    text-align: center;
+  }
+  
+  @media (max-width: 480px) {
+    text-align: center;
+  }
 `
 
 export const HeroImage = styled.div`
