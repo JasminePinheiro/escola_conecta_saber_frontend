@@ -2,89 +2,37 @@
 
 Aplicação React para gerenciamento de blog de professores, desenvolvida como parte do Tech Challenge da Fase 3.
 
-## 📋 Requisitos Funcionais Implementados
+## 📋 Funcionalidades Implementadas
 
-### 1. Página Principal (Lista de Posts)
-- ✅ Exibição de lista de todos os posts disponíveis
-- ✅ Cada item mostra título, autor e descrição breve
-- ✅ Campo de busca para filtrar posts por palavras-chave
-- ✅ Busca em tempo real com debounce
+- ✅ Lista de posts com busca e paginação
+- ✅ Visualização completa de posts
+- ✅ Criação, edição e exclusão de posts (apenas professores e administradores)
+- ✅ Painel administrativo para gerenciar posts
+- ✅ Sistema de autenticação e autorização por roles
+- ✅ Cadastro e login de usuários
 
-### 2. Página de Leitura de Post
-- ✅ Exibição do conteúdo completo do post
-- ✅ Sistema de comentários implementado
-- ✅ Exibição de data de criação
-- ✅ Botão para editar (apenas para usuários autenticados)
+## 🛠️ Tecnologias
 
-### 3. Página de Criação de Postagens
-- ✅ Formulário completo para criação de posts
-- ✅ Campos: título, autor, descrição (opcional) e conteúdo
-- ✅ Validação de campos obrigatórios
-- ✅ Integração com API REST
-- ✅ Proteção por autenticação
-
-### 4. Página de Edição de Postagens
-- ✅ Formulário para edição de posts existentes
-- ✅ Carregamento automático dos dados atuais
-- ✅ Validação de campos
-- ✅ Integração com API REST
-- ✅ Proteção por autenticação
-
-### 5. Página Administrativa
-- ✅ Lista de todas as postagens
-- ✅ Opções para editar cada post
-- ✅ Opções para excluir cada post
-- ✅ Confirmação antes de excluir
-- ✅ Proteção por autenticação
-
-### 6. Autenticação e Autorização
-- ✅ Sistema de login implementado
-- ✅ Proteção de rotas privadas
-- ✅ Gerenciamento de sessão com localStorage
-- ✅ Interceptores de requisição para adicionar token
-- ✅ Redirecionamento automático em caso de token inválido
-
-## 🛠️ Requisitos Técnicos Implementados
-
-### 1. Desenvolvimento em React com TypeScript
-- ✅ React 18.2.0 com hooks
-- ✅ TypeScript para tipagem estática
-- ✅ Componentes funcionais tipados
-- ✅ React Router DOM para navegação
-- ✅ Hooks personalizados (useAuth)
-- ✅ Interfaces e tipos definidos para todas as entidades
-
-### 2. Estilização e Responsividade
-- ✅ Styled Components para estilização
-- ✅ Design responsivo para mobile e desktop
-- ✅ Breakpoints para tablets e smartphones
-- ✅ UI moderna e intuitiva
-
-### 3. Integração com Back-End
-- ✅ Axios para requisições HTTP
-- ✅ Serviços organizados (postService, api)
-- ✅ Context API para gerenciamento de estado global
-- ✅ Tratamento de erros
-- ✅ Loading states
-
-### 4. Documentação
-- ✅ README completo com instruções
-- ✅ Documentação da arquitetura
-- ✅ Guia de setup e uso
+- **React 18.2.0** + **TypeScript 5.3.2**
+- **Vite 5.0.8** - Build tool
+- **React Router DOM 6.20.0** - Roteamento
+- **Styled Components 6.1.1** - Estilização
+- **Axios 1.6.2** - Requisições HTTP
+- **Context API** - Gerenciamento de estado
 
 ## 🚀 Setup Inicial
 
 ### Pré-requisitos
-- Node.js (versão 16 ou superior)
+
+- Node.js 20+ 
 - npm ou yarn
-- TypeScript (instalado automaticamente via npm install)
-- Backend API rodando (ver configuração abaixo)
+- Backend API rodando
 
 ### Instalação
 
-1. Clone o repositório ou navegue até a pasta do projeto:
+1. Clone o repositório:
 ```bash
-cd "Tech challenge - Fase 3 - Jasmine Pinheiro de Souza"
+git clone <url-do-repositório>
 ```
 
 2. Instale as dependências:
@@ -93,136 +41,177 @@ npm install
 ```
 
 3. Configure as variáveis de ambiente:
-Crie um arquivo `.env` na raiz do projeto:
+Crie um arquivo `.env` na raiz:
 ```env
-VITE_API_URL=http://localhost:3001/api
+VITE_API_URL=https://escola-conecta-saber-latest.onrender.com
 ```
 
-**Nota:** O Vite usa o prefixo `VITE_` para variáveis de ambiente. Se estiver usando Create React App, use `REACT_APP_API_URL`.
+4. Gere o build da aplicação:
+```bash
+npm run build
+```
 
-4. Inicie o servidor de desenvolvimento:
+Os arquivos otimizados estarão na pasta `dist/`.
+
+5. Inicie o servidor de desenvolvimento:
 ```bash
 npm run dev
 ```
 
 A aplicação estará disponível em `http://localhost:3000`
 
-### Build para Produção
-
-```bash
-npm run build
-```
-
-Os arquivos otimizados estarão na pasta `dist`.
-
-### Preview da Build
-
-```bash
-npm run preview
-```
 
 ## 📁 Arquitetura da Aplicação
 
 ```
 src/
-├── components/          # Componentes reutilizáveis
-│   └── Navbar.tsx      # Barra de navegação
-├── contexts/           # Context API
-│   └── AuthContext.tsx # Context de autenticação
-├── pages/              # Páginas da aplicação
-│   ├── Home.tsx        # Lista de posts
-│   ├── PostDetail.tsx  # Detalhes do post
-│   ├── CreatePost.tsx  # Criar novo post
-│   ├── EditPost.tsx    # Editar post existente
-│   ├── Admin.tsx       # Painel administrativo
-│   └── Login.tsx       # Página de login
-├── services/           # Serviços de API
-│   ├── api.ts          # Configuração do Axios
-│   └── postService.ts  # Funções de API para posts
-├── styles/             # Estilos Styled Components
-│   ├── GlobalStyles.ts # Estilos globais reutilizáveis
-│   ├── NavbarStyles.ts # Estilos da navbar
-│   ├── HomeStyles.ts   # Estilos da página home
-│   ├── PostDetailStyles.ts # Estilos da página de detalhes
-│   ├── AdminStyles.ts  # Estilos da página admin
-│   ├── LoginStyles.ts  # Estilos da página de login
-│   └── FormStyles.ts   # Estilos de formulários
-├── types/              # Definições de tipos TypeScript
-│   └── index.ts        # Interfaces e tipos
-├── App.tsx             # Componente principal com rotas
-├── main.tsx            # Ponto de entrada da aplicação
-├── vite-env.d.ts       # Tipos do Vite
-└── index.css           # Estilos CSS globais
+├── components/     # Componentes reutilizáveis (Navbar, Footer)
+├── contexts/       # Context API (AuthContext)
+├── pages/          # Páginas da aplicação
+├── services/       # Serviços de API (api.ts, postService.ts, userService.ts)
+├── styles/         # Estilos Styled Components
+├── types/          # Definições TypeScript
+├── App.tsx         # Componente principal com rotas
+└── main.tsx        # Ponto de entrada
 ```
+
+### Estrutura de Pastas
+
+- **components/**: Componentes reutilizáveis (Navbar, Footer)
+- **contexts/**: Gerenciamento de estado global (AuthContext)
+- **pages/**: Páginas/rotas (Home, PostDetail, CreatePost, EditPost, Admin, Login, Register, etc.)
+- **services/**: Camada de abstração para API (Axios configurado com interceptores)
+- **styles/**: Estilos organizados por componente usando Styled Components
+- **types/**: Interfaces e tipos TypeScript para type safety
 
 ## 🔌 Integração com Backend
 
-A aplicação espera que o backend forneça os seguintes endpoints:
+### Configuração
+
+A URL da API é configurada via variável de ambiente `VITE_API_URL`.
+
+### Estrutura de Resposta
+
+A aplicação espera respostas no formato:
+```typescript
+{
+  success: boolean
+  data: T
+  timestamp: string
+}
+```
+
+### Endpoints Principais
+
+#### Autenticação
+- `POST /api/auth/login` - Login
+- `POST /api/auth/register` - Registro
+
+#### Posts
+- `GET /api/posts` - Lista posts (com paginação: `?page=1&limit=10`)
+- `GET /api/posts/:id` - Obter post por ID
+- `GET /api/posts/search?query=termo` - Buscar posts
+- `GET /api/posts/all` - Lista todos (apenas professores)
+- `POST /api/posts` - Criar post (requer autenticação)
+- `PATCH /api/posts/:id` - Atualizar post (requer autenticação)
+- `DELETE /api/posts/:id` - Excluir post (requer autenticação)
 
 ### Autenticação
-- `POST /api/auth/login` - Login de usuário
-  - Body: `{ email: string, password: string }`
-  - Response: `{ token: string, user: object }`
 
-### Posts
-- `GET /api/posts` - Listar todos os posts
-- `GET /api/posts/:id` - Obter post por ID
-- `POST /api/posts` - Criar novo post (requer autenticação)
-  - Body: `{ title: string, author: string, content: string, description?: string }`
-- `PUT /api/posts/:id` - Atualizar post (requer autenticação)
-- `DELETE /api/posts/:id` - Excluir post (requer autenticação)
-- `GET /api/posts/search?q=termo` - Buscar posts
-
-### Autenticação nas Requisições
-Todas as requisições protegidas devem incluir o header:
+Todas as requisições protegidas incluem automaticamente o header:
 ```
 Authorization: Bearer <token>
 ```
 
-## 🎨 Funcionalidades Principais
+O token é adicionado automaticamente pelos interceptores do Axios.
 
-### Sistema de Busca
-- Busca em tempo real com debounce de 500ms
-- Busca por palavras-chave no título e conteúdo
-- Feedback visual durante a busca
+## 🛣️ Sistema de Rotas
 
-### Sistema de Comentários
-- Adicionar comentários em posts
-- Exibir nome do autor e data do comentário
-- Interface intuitiva e responsiva
+### Rotas Públicas
+- `/` - Home (lista de posts)
+- `/post/:id` - Detalhes do post
+- `/sobre` - Sobre o projeto
+- `/contato` - Contato
+- `/login` - Login
+- `/register` - Registro
 
-### Proteção de Rotas
-- Rotas privadas protegidas por componente `PrivateRoute`
-- Redirecionamento automático para login se não autenticado
-- Verificação de token no localStorage
+### Rotas Protegidas
 
-### Gerenciamento de Estado
-- Context API para autenticação global
-- Estado local para formulários e listas
-- Loading states e tratamento de erros
+**Requerem autenticação:**
+- `/profile` - Perfil do usuário
 
-## 📱 Responsividade
+**Requerem autenticação + role professor:**
+- `/create-post` - Criar post
+- `/edit-post/:id` - Editar post
+- `/admin` - Painel administrativo (gerenciar e deletar posts)
 
-A aplicação é totalmente responsiva com breakpoints:
-- **Desktop**: Layout completo com grid de 3 colunas
-- **Tablet**: Layout adaptado com grid de 2 colunas
-- **Mobile**: Layout em coluna única, navegação vertical
+## 🔒 Autenticação
 
-## 🔒 Segurança
+### Fluxo
 
-- Tokens armazenados no localStorage
-- Interceptores Axios para adicionar token automaticamente
-- Validação de autenticação em rotas protegidas
-- Tratamento de erros 401 (não autorizado)
+1. Login/Registro → Backend retorna token
+2. Token salvo no `localStorage`
+3. Token adicionado automaticamente aos headers via interceptores
+4. Em caso de 401, sessão é limpa e redireciona para login
 
-## 🧪 Estrutura de Dados (TypeScript)
+### Roles
 
-Todas as interfaces estão definidas em `src/types/index.ts`:
+- **Aluno** (`aluno`): Visualizar posts
+- **Professor** (`professor`): Criar, editar e excluir posts
 
-### Post
+## 📖 Guia de Uso
+
+### Para Usuários
+
+#### Navegação Básica
+
+1. **Visualizar Posts**
+   - Acesse a página inicial (`/`) para ver todos os posts disponíveis
+   - Use a barra de busca para encontrar posts específicos
+   - Clique em um post para ler o conteúdo completo
+
+2. **Criar Conta e Fazer Login**
+   - Clique em "Cadastrar" na navbar
+   - Preencha nome, email, senha e selecione seu papel (aluno/professor)
+   - Após registro, você será automaticamente logado
+   - Para fazer login, clique em "Login" e informe email e senha
+
+#### Para Professores
+
+1. **Criar um Post**
+   - Faça login como professor
+   - Acesse a página gerenciar postagens (`/admin`) para ver todos os posts disponíveis
+   - Clique em "Criar Novo Post"
+   - Preencha título, conteúdo, tags e status
+   - Clique em "Salvar"
+
+2. **Editar um Post**
+   - Faça login como professor
+   - Acesse a página gerenciar postagens (`/admin`)
+   - Clique no botão "Editar"
+   - Modifique os campos desejados
+   - Salve as alterações
+
+3. **Excluir um Post**
+   - Faça login como professor
+   - Acesse a página gerenciar postagens (`/admin`)
+   - Clique no botão "Excluir"
+   - Confirme a exclusão
+
+## 📊 Estrutura de Dados
+
+Interfaces principais definidas em `src/types/index.ts`:
+
 ```typescript
+interface User {
+  id: string
+  name: string
+  email: string
+  role: 'aluno' | 'professor'
+}
+
 interface Post {
-  id: number
+  id: string | number
   title: string
   author: string
   content: string
@@ -231,19 +220,7 @@ interface Post {
   updatedAt?: string
   comments?: Comment[]
 }
-```
 
-### User
-```typescript
-interface User {
-  id: number
-  name: string
-  email: string
-}
-```
-
-### Comment
-```typescript
 interface Comment {
   id: number
   author: string
@@ -252,54 +229,28 @@ interface Comment {
 }
 ```
 
-## 🐛 Troubleshooting
+## 🚀 Deploy
 
-### Erro de CORS
-Se encontrar erros de CORS, certifique-se de que o backend está configurado para aceitar requisições do frontend.
+### Vercel
 
-### Erro 401 (Não Autorizado)
-- Verifique se o token está sendo salvo corretamente
-- Confirme que o backend está retornando o token no formato esperado
-- Verifique se o token não expirou
+O deploy é realizado automaticamente via **GitHub Actions**.
 
-### Posts não carregam
-- Verifique se a URL da API está correta no arquivo `.env`
-- Confirme que o backend está rodando
-- Verifique o console do navegador para erros
+1. Configure o **token da Vercel** como secret no GitHub Actions
+2. O pipeline realiza o build e o deploy automaticamente na Vercel
 
-## 📝 Scripts Disponíveis
+### Docker
 
-- `npm run dev` - Inicia servidor de desenvolvimento
-- `npm run build` - Cria build de produção
-- `npm run preview` - Preview da build de produção
+```bash
+docker build -t escola-conecta-saber-frontend .
+docker run -p 3000:3000 -e VITE_API_URL=https://api.example.com escola-conecta-saber-frontend
+```
 
-## 💡 TypeScript
-
-A aplicação é totalmente tipada com TypeScript, oferecendo:
-- ✅ Type safety em tempo de desenvolvimento
-- ✅ Autocomplete melhorado no IDE
-- ✅ Detecção precoce de erros
-- ✅ Interfaces bem definidas para todas as entidades
-- ✅ Tipos para props de componentes
-- ✅ Tipos para funções e hooks
-
-## 🚧 Melhorias Futuras
-
-- [ ] Paginação na lista de posts
-- [ ] Filtros avançados (por autor, data, etc.)
-- [ ] Editor de texto rico (WYSIWYG)
-- [ ] Upload de imagens
-- [ ] Sistema de tags/categorias
-- [ ] Notificações toast
-- [ ] Testes unitários e de integração com TypeScript
-- [ ] PWA (Progressive Web App)
-- [ ] Modo escuro/claro
 
 ## 👨‍💻 Desenvolvido por
 
-Jasmine Pinheiro de Souza - Tech Challenge Fase 3
+**Jasmine Pinheiro de Souza**  
+Tech Challenge Fase 3
 
 ## 📄 Licença
 
 Este projeto foi desenvolvido para fins educacionais.
-
