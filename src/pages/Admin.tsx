@@ -23,8 +23,8 @@ import iconCalendar from '../images/icon-calendar.svg'
 const Admin: React.FC = () => {
   const navigate = useNavigate()
   const { user } = useAuth()
-  const [allPosts, setAllPosts] = useState<Post[]>([]) // Todos os posts carregados
-  const [filteredPosts, setFilteredPosts] = useState<Post[]>([]) // Posts filtrados pela busca
+  const [allPosts, setAllPosts] = useState<Post[]>([])
+  const [filteredPosts, setFilteredPosts] = useState<Post[]>([])
   const [loading, setLoading] = useState<boolean>(true)
   const [error, setError] = useState<string | null>(null)
   const [deletingId, setDeletingId] = useState<string | number | null>(null)

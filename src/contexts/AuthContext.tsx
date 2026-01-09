@@ -81,7 +81,6 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
 
   const register = async (name: string, email: string, password: string, role: UserRole): Promise<{ success: boolean; error?: string }> => {
     try {
-      // Mapear role do frontend para backend
       const backendRole: BackendRole = role === 'aluno' ? 'student' : 'teacher'
       
       const response = await api.post<AuthResponse>('/auth/register', { 
