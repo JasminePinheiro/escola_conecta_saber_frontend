@@ -16,6 +16,9 @@ import {
 import { AdminBanner, AdminGrid, AdminCard, AdminCardTitle, AdminCardDescription, AdminCardDate, AdminCardAuthor, AdminCardActions, SearchBar, CreateButtonContainer } from '../styles/AdminStyles'
 import { Post } from '../types'
 import { colors } from '../styles/GlobalStyles'
+import iconSearch from '../images/icon-search.svg'
+import iconUser from '../images/icon-user.svg'
+import iconCalendar from '../images/icon-calendar.svg'
 
 const Admin: React.FC = () => {
   const navigate = useNavigate()
@@ -245,7 +248,7 @@ const Admin: React.FC = () => {
               style={{ paddingLeft: '45px' }}
               className="focus:ring-2 focus:ring-orange focus:border-orange transition-all duration-300"
             />
-            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-textGray text-lg pointer-events-none hover:scale-110 transition-transform duration-300"><img src="src\images\icon-search.svg" alt="search" /></span>
+            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-textGray text-lg pointer-events-none hover:scale-110 transition-transform duration-300"><img src={iconSearch} alt="search" /></span>
           </FormGroup>
         </SearchBar>
 
@@ -318,10 +321,10 @@ const Admin: React.FC = () => {
                     ))}
                   </div>
                   <AdminCardAuthor className="group-hover:scale-105 transition-transform duration-300">
-                    <img src="src\images\icon-user.svg" alt="user" /> {post.author || 'Autor não informado'}
+                    <img src={iconUser} alt="user" /> {post.author || 'Autor não informado'}
                   </AdminCardAuthor>
                   <AdminCardDate className="group-hover:scale-105 transition-transform duration-300">
-                    <img src="src\images\icon-calendar.svg" alt="calendar" /> {post.createdAt
+                    <img src={iconCalendar} alt="calendar" /> {post.createdAt
                       ? new Date(post.createdAt).toLocaleDateString('pt-BR', {
                           day: '2-digit',
                           month: 'long',

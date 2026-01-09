@@ -27,6 +27,9 @@ import schoolImage from '../images/school.png'
 import teacher1Image from '../images/teacher1.png'
 import teacher2Image from '../images/teacher2.png'
 import teacher3Image from '../images/teacher3.png'
+import iconBooks from '../images/icon-books.svg'
+import iconHeart from '../images/icon-heart.svg'
+import iconGoal from '../images/icon-goal.svg'
 
 const About: React.FC = () => {
   return (
@@ -135,7 +138,7 @@ const About: React.FC = () => {
           <ValuesGrid>
             <ValueCard className="hover:scale-105 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 animate-slide-up group cursor-pointer">
               <ValueIcon style={{ background: colors.lightBlue }} className="group-hover:rotate-12 group-hover:scale-110 transition-transform duration-300">
-                <img src="src\images\icon-books.svg" alt="Metodologia Inovadora" />
+                <img src={iconBooks} alt="Metodologia Inovadora" />
               </ValueIcon>
               <h3 style={{ fontSize: '20px', fontWeight: 600, marginBottom: '12px', color: colors.textDark }} className="group-hover:text-blue-500 transition-colors duration-300">
                 Metodologia Inovadora
@@ -146,7 +149,7 @@ const About: React.FC = () => {
             </ValueCard>
             <ValueCard className="hover:scale-105 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 animate-slide-up group cursor-pointer" style={{ animationDelay: '0.1s' }}>
               <ValueIcon style={{ background: colors.softPeach }} className="group-hover:rotate-12 group-hover:scale-110 transition-transform duration-300">
-                <img src="src\images\icon-heart.svg" alt="Educação com Amor" />
+                <img src={iconHeart} alt="Educação com Amor" />
               </ValueIcon>
               <h3 style={{ fontSize: '20px', fontWeight: 600, marginBottom: '12px', color: colors.textDark }} className="group-hover:text-red-500 transition-colors duration-300">
                 Educação com Amor
@@ -157,7 +160,7 @@ const About: React.FC = () => {
             </ValueCard>
             <ValueCard className="hover:scale-105 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 animate-slide-up group cursor-pointer" style={{ animationDelay: '0.2s' }}>
               <ValueIcon style={{ background: colors.lightPurple }} className="group-hover:rotate-12 group-hover:scale-110 transition-transform duration-300">
-                <img src="src\images\icon-goal.svg" alt="Foco no Futuro" />
+                <img src={iconGoal} alt="Foco no Futuro" />
               </ValueIcon>
               <h3 style={{ fontSize: '20px', fontWeight: 600, marginBottom: '12px', color: colors.textDark }} className="group-hover:text-purple-500 transition-colors duration-300">
                 Foco no Futuro

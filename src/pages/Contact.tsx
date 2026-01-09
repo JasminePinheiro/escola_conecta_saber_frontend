@@ -20,6 +20,10 @@ import {
   VisitDescription
 } from '../styles/ContactStyles'
 import { colors } from '../styles/GlobalStyles'
+import iconWhatsApp from '../images/icon-whatsApp.svg'
+import iconPlaceMarker from '../images/icon-place-marker.svg'
+import iconPhone from '../images/icon-phone.svg'
+import iconEmail from '../images/icon-email.svg'
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -52,7 +56,7 @@ const Contact: React.FC = () => {
             Estamos aqui para esclarecer suas dúvidas
           </ContactDescription>
           <WhatsAppButton className="hover:scale-110 hover:shadow-2xl transition-all duration-300 animate-pulse-slow">
-            <span style={{ marginRight: '8px' }}><img src="src\images\icon-whatsApp.svg" alt="WhatsApp" /></span>
+            <span style={{ marginRight: '8px' }}><img src={iconWhatsApp} alt="WhatsApp" /></span>
             WhatsApp
           </WhatsAppButton>
         </Container>
@@ -65,7 +69,7 @@ const Contact: React.FC = () => {
               style={{ background: colors.lightBlue }}
               className="group-hover:rotate-12 group-hover:scale-110 transition-transform duration-300"
             >
-              <img src="src\images\icon-place-marker.svg" alt="Endereço" />
+              <img src={iconPlaceMarker} alt="Endereço" />
             </ContactIcon>
             <ContactCardTitle className="group-hover:text-blue-500 transition-colors duration-300">Endereço</ContactCardTitle>
             <ContactCardText>
@@ -80,7 +84,7 @@ const Contact: React.FC = () => {
               style={{ background: colors.softPeach }}
               className="group-hover:rotate-12 group-hover:scale-110 transition-transform duration-300"
             >
-              <img src="src\images\icon-phone.svg" alt="Telefone" />
+              <img src={iconPhone} alt="Telefone" />
             </ContactIcon>
             <ContactCardTitle className="group-hover:text-orange transition-colors duration-300">Telefone</ContactCardTitle>
             <ContactCardText>
@@ -94,7 +98,7 @@ const Contact: React.FC = () => {
               style={{ background: colors.lightPurple }}
               className="group-hover:rotate-12 group-hover:scale-110 transition-transform duration-300"
             >
-              <img src="src\images\icon-email.svg" alt="E-mail" />
+              <img src={iconEmail} alt="E-mail" />
             </ContactIcon>
             <ContactCardTitle className="group-hover:text-purple-500 transition-colors duration-300">E-mail</ContactCardTitle>
             <ContactCardText>
@@ -207,7 +211,7 @@ const Contact: React.FC = () => {
             Agende uma visita presencial e veja de perto como podemos oferecer a melhor educação para seu filho em um ambiente acolhedor e estimulante.
           </VisitDescription>
           <WhatsAppButton className="hover:scale-110 hover:shadow-2xl transition-all duration-300 animate-pulse-slow">
-          <span style={{ marginRight: '8px' }}><img src="src\images\icon-whatsApp.svg" alt="WhatsApp" /></span>
+          <span style={{ marginRight: '8px' }}><img src={iconWhatsApp} alt="WhatsApp" /></span>
             WhatsApp
           </WhatsAppButton>
         </Container>

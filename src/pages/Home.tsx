@@ -4,6 +4,11 @@ import { getPostsPaginated, searchPosts } from '../services/postService'
 import { Container, PrimaryButton, SecondaryButton, Text } from '../styles/GlobalStyles'
 import iconUser from '../images/icon-user.svg'
 import iconCalendar from '../images/icon-calendar.svg'
+import heroImage from '../images/hero-image.png'
+import iconBook from '../images/icon-book.svg'
+import iconPeople from '../images/icon-people.svg'
+import iconStar from '../images/icon-star.svg'
+import iconSearch from '../images/icon-search.svg'
 import {
   HeroSection,
   HeroContent,
@@ -312,7 +317,7 @@ const Home: React.FC = () => {
             
             <HeroImage className="animate-fade-in">
               <div className="w-[500px] h-[500px] max-w-full rounded-full bg-gradient-to-br from-gray-100 to-gray-200 border-4 border-orange flex items-center justify-center text-textGray overflow-hidden hover:scale-105 hover:rotate-3 transition-all duration-500 shadow-2xl hover:shadow-orange/50 hero-image-container">
-                <img src="src\images\hero-image.png" alt="Professor e crianças ao redor de um globo" className="w-full h-full object-cover" />
+                <img src={heroImage} alt="Professor e crianças ao redor de um globo" className="w-full h-full object-cover" />
               </div>
             </HeroImage>
           </div>
@@ -335,7 +340,7 @@ const Home: React.FC = () => {
                 style={{ background: colors.softPeach }}
                 className="group-hover:rotate-12 group-hover:scale-110 transition-transform duration-300"
               >
-                <img src="src\images\icon-book.svg" alt="Educação Literária" />
+                <img src={iconBook} alt="Educação Literária" />
               </ProgramIcon>
               <ProgramCardTitle className="group-hover:text-orange transition-colors duration-300">Educação Literária</ProgramCardTitle>
               <ProgramCardDescription>
@@ -348,7 +353,7 @@ const Home: React.FC = () => {
                 style={{ background: colors.lightBlue }}
                 className="group-hover:rotate-12 group-hover:scale-110 transition-transform duration-300"
               >
-                <img src="src\images\icon-people.svg" alt="Desenvolvimento Social" />
+                <img src={iconPeople} alt="Desenvolvimento Social" />
               </ProgramIcon>
               <ProgramCardTitle className="group-hover:text-blue-500 transition-colors duration-300">Desenvolvimento Social</ProgramCardTitle>
               <ProgramCardDescription>
@@ -361,7 +366,7 @@ const Home: React.FC = () => {
                 style={{ background: colors.lightPurple }}
                 className="group-hover:rotate-12 group-hover:scale-110 transition-transform duration-300"
               >
-                <img src="src\images\icon-star.svg" alt="Criatividade Artística" />
+                <img src={iconStar} alt="Criatividade Artística" />
               </ProgramIcon>
               <ProgramCardTitle className="group-hover:text-purple-500 transition-colors duration-300">Criatividade Artística</ProgramCardTitle>
               <ProgramCardDescription>
@@ -389,7 +394,7 @@ const Home: React.FC = () => {
           
           <SearchContainer>
             <SearchIcon>
-              <img src="src\images\icon-search.svg" alt="search" />
+              <img src={iconSearch} alt="search" />
             </SearchIcon>
             <SearchInput
               type="text"
