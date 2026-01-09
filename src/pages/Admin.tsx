@@ -220,7 +220,7 @@ const Admin: React.FC = () => {
       <AdminBanner>
         <Container>
           <div className="animate-slide-up">
-            <Title style={{ marginBottom: '16px', color: colors.textDark }}>Gerenciar Publicações</Title>
+            <Title style={{ marginBottom: '16px', color: colors.textDark }}>Gerenciar Postagens</Title>
             <Text style={{ marginBottom: '32px', color: colors.textGray, fontSize: '16px' }}>
               Gerencie seus posts e conteúdo educacional
             </Text>
