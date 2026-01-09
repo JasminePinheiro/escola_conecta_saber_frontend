@@ -8,10 +8,9 @@ on:
       - develop
 
 env:
-  NODE_VERSION: '20'
+  NODE_VERSION: '22'
 
 jobs:
-  # Teste e Build
   test:
     name: Test and Build
     runs-on: ubuntu-latest
@@ -37,7 +36,6 @@ jobs:
         env:
           VITE_API_URL: ${{ secrets.VITE_API_URL || 'https://escola-conecta-saber-latest.onrender.com' }}
 
-  # Deploy na Vercel
   deploy:
     name: Deploy to Vercel
     runs-on: ubuntu-latest
@@ -58,20 +56,10 @@ jobs:
 
       - name: Pull Vercel Environment Information
         run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
-        env:
-          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 
       - name: Build Project Artifacts
         run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
-        env:
-          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-          VITE_API_URL: ${{ secrets.VITE_API_URL || 'https://escola-conecta-saber-latest.onrender.com' }}
 
       - name: Deploy Project Artifacts to Vercel
         run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
-        env:
-          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 
