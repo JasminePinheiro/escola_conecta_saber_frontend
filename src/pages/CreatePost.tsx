@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import { createPost } from '../services/postService'
-import { useAuth } from '../contexts/AuthContext'
 import {
   Container,
   Title,
