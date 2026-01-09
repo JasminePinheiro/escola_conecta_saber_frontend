@@ -121,13 +121,11 @@ const Home: React.FC = () => {
         setLoading(false)
       }
     }
-    // Scroll para o topo da seção de posts
     window.scrollTo({ top: document.getElementById('posts-section')?.offsetTop || 0, behavior: 'smooth' })
   }
 
   return (
     <div className="relative min-h-screen overflow-hidden">
-      {/* Gradiente de fundo animado com movimento intenso */}
       <div 
         className="fixed inset-0 -z-10"
         style={{
@@ -146,7 +144,6 @@ const Home: React.FC = () => {
         }}
       ></div>
       
-      {/* Efeitos de bolhas decorativas com movimento intenso */}
       <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
         <div 
           className="absolute top-20 left-10 w-72 h-72 rounded-full blur-3xl"
@@ -182,7 +179,6 @@ const Home: React.FC = () => {
         ></div>
       </div>
 
-      {/* Formas geométricas flutuantes com movimento rápido */}
       <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
         <div 
           className="absolute top-40 right-20 w-32 h-32 opacity-20"
@@ -241,7 +237,6 @@ const Home: React.FC = () => {
         ))}
       </div>
 
-      {/* Ondas com movimento intenso */}
       <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
         <div 
           className="absolute bottom-0 left-0 right-0 h-64 opacity-15"

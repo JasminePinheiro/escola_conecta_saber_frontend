@@ -106,7 +106,6 @@ const EditPost: React.FC = () => {
 
     try {
       setLoading(true)
-      // Preparar dados para envio
       const postData: PostFormData = {
         title: formData.title,
         content: formData.content,
