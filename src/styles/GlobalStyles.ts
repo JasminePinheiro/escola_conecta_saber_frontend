@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 
-// Cores do tema Escola Conecta Saber
 export const colors = {
   green: '#06C373',
   lightGreen: '#E9FAED',
@@ -9,17 +8,30 @@ export const colors = {
   softPeach: '#FACAB7',
   lightPeach: '#F8E6DA',
   blue:'#6371F6',
+  blueMedium: '#4A90E2',
   darkBlue: '#1E3A5F',
   lightBlue: '#DDE5FF',
   lightPurple: '#CBB6FB',
   purple: '#8757F6',
+  purpleMedium: '#9B59B6',
   beige: '#FAF9F6',
+  beigeLight: '#FFF5F0',
+  blueVeryLight: '#F0F8FF',
   white: '#FFFFFF',
   grayLight: '#F5F5F5',
+  grayLighter: '#E5E7EB',
+  grayVeryLight: '#F0F0F0',
   gray: '#E0E0E0',
+  grayMedium: '#6B7280',
+  grayMediumDark: '#374151',
   grayDark: '#2C3E50',
+  placeholderGray: '#999999',
   textDark: '#2C3E50',
   textGray: '#666666',
+  successGreen: '#10B981',
+  successGreenAlt: '#28A745',
+  warningYellow: '#F59E0B',
+  errorRed: '#DC3545',
 }
 
 export const AppContainer = styled.div`
@@ -110,7 +122,7 @@ export const Input = styled.input`
   font-family: inherit;
   
   &::placeholder {
-    color: #999;
+    color: ${colors.placeholderGray};
   }
   
   &:focus {
@@ -135,7 +147,7 @@ export const TextArea = styled.textarea`
   transition: all 0.3s ease;
   
   &::placeholder {
-    color: #999;
+    color: ${colors.placeholderGray};
   }
   
   &:focus {
@@ -231,14 +243,14 @@ export const FormGroup = styled.div`
 `
 
 export const ErrorMessage = styled.p`
-  color: #dc3545;
+  color: ${colors.errorRed};
   font-size: 14px;
   margin-top: 8px;
   font-weight: 500;
 `
 
 export const SuccessMessage = styled.p`
-  color: #28a745;
+  color: ${colors.successGreenAlt};
   font-size: 14px;
   margin-top: 8px;
   font-weight: 500;

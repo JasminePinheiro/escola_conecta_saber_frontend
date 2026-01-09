@@ -182,7 +182,7 @@ const Contact: React.FC = () => {
             <div style={{
               width: '100%',
               height: '400px',
-              background: '#f0f0f0',
+              background: colors.grayVeryLight,
               borderRadius: '12px',
               display: 'flex',
               alignItems: 'center',

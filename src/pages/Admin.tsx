@@ -258,7 +258,7 @@ const Admin: React.FC = () => {
         
         {error && (
           <Card>
-            <Text style={{ color: '#dc3545' }}>{error}</Text>
+            <Text style={{ color: colors.errorRed }}>{error}</Text>
           </Card>
         )}
 
@@ -300,9 +300,9 @@ const Admin: React.FC = () => {
                         borderRadius: '4px',
                         fontSize: '12px',
                         fontWeight: 600,
-                        background: post.status === 'published' ? '#10b981' : 
-                                   post.status === 'draft' ? '#f59e0b' : '#6b7280',
-                        color: 'white'
+                        background: post.status === 'published' ? colors.successGreen : 
+                                   post.status === 'draft' ? colors.warningYellow : colors.grayMedium,
+                        color: colors.white
                       }}>
                         {post.status === 'published' ? 'Publicado' :
                          post.status === 'draft' ? 'Rascunho' : 'Privado'}
@@ -313,8 +313,8 @@ const Admin: React.FC = () => {
                         padding: '4px 8px',
                         borderRadius: '4px',
                         fontSize: '12px',
-                        background: '#e5e7eb',
-                        color: '#374151'
+                        background: colors.grayLighter,
+                        color: colors.grayMediumDark
                       }}>
                         {tag}
                       </span>

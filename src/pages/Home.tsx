@@ -495,7 +495,7 @@ const Home: React.FC = () => {
                           style={{
                             padding: '8px 16px',
                             borderRadius: '8px',
-                            border: currentPage === pageNum ? `2px solid ${colors.orange}` : '2px solid #e5e7eb',
+                            border: currentPage === pageNum ? `2px solid ${colors.orange}` : `2px solid ${colors.grayLighter}`,
                             background: currentPage === pageNum ? colors.orange : 'white',
                             color: currentPage === pageNum ? 'white' : colors.textDark,
                             cursor: loading ? 'not-allowed' : 'pointer',

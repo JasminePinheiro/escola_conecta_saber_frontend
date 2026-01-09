@@ -73,7 +73,7 @@ export const SuccessMessage = styled.div`
 `
 
 export const RequiredAsterisk = styled.span`
-  color: #dc3545;
+  color: ${colors.errorRed};
   margin-left: 4px;
   font-weight: 600;
 `

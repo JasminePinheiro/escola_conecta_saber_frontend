@@ -128,7 +128,7 @@ const About: React.FC = () => {
       <ValuesSection>
         <Container>
           <div style={{ textAlign: 'center', marginBottom: '48px' }}>
-            <Title style={{ fontSize: '36px', marginBottom: '16px', color: '#4A90E2' }}>
+            <Title style={{ fontSize: '36px', marginBottom: '16px', color: colors.blueMedium }}>
               Nossos Valores
             </Title>
             <Text style={{ fontSize: '16px', maxWidth: '600px', margin: '0 auto' }}>
@@ -176,7 +176,7 @@ const About: React.FC = () => {
       <TeamSection>
         <Container>
           <div style={{ textAlign: 'center', marginBottom: '48px' }}>
-            <Title style={{ fontSize: '36px', marginBottom: '16px', color: '#9B59B6' }}>
+            <Title style={{ fontSize: '36px', marginBottom: '16px', color: colors.purpleMedium }}>
               Nossa Equipe de Especialistas
             </Title>
             <Text style={{ fontSize: '16px', maxWidth: '600px', margin: '0 auto' }}>

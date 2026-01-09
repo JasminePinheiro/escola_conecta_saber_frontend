@@ -9,7 +9,8 @@ import {
   Input,
   PrimaryButton,
   ErrorMessage,
-  Text
+  Text,
+  colors
 } from '../styles/GlobalStyles'
 import {
   ProfileContainer,
@@ -239,7 +240,7 @@ const Profile: React.FC = () => {
                 minLength={6}
                 placeholder="Deixe em branco para não alterar"
               />
-              <Text style={{ fontSize: '12px', color: '#666', marginTop: '4px' }}>
+              <Text style={{ fontSize: '12px', color: colors.textGray, marginTop: '4px' }}>
                 A senha deve ter pelo menos 6 caracteres
               </Text>
             </FormGroup>
